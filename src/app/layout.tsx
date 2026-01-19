@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ProjectProvider } from "@/context/ProjectContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        {children}
+        <ProjectProvider>{children}</ProjectProvider>
       </body>
     </html>
   );

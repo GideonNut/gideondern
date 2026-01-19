@@ -1,61 +1,97 @@
+"use client";
+
+import Link from "next/link";
+import { useProjects } from "@/context/ProjectContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
-interface PortfolioItem {
-  title: string;
-  description: string;
-}
-
-const portfolioItems: PortfolioItem[] = [
-  {
-    title: "Project One",
-    description: "A modern web application built with Next.js and React.",
-  },
-  {
-    title: "Project Two",
-    description: "Full-stack application with TypeScript and Node.js backend.",
-  },
-  {
-    title: "Project Three",
-    description: "Mobile-responsive design using Tailwind CSS and Shadcn UI.",
-  },
-  {
-    title: "Project Four",
-    description: "Real-time data dashboard with performance optimization.",
-  },
-];
-
 export default function Home() {
+  const { projects } = useProjects();
+
   return (
-    <div
-      className="min-h-screen w-full bg-hero"
-    >
+    <div className="min-h-screen w-full bg-hero">
       <div className="min-h-screen w-full bg-black/30 backdrop-blur-sm">
         <div className="flex flex-col items-center justify-center px-4 py-16">
           {/* Name Header */}
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-16 tracking-tight">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 tracking-tight">
             Gideon Dern
           </h1>
 
+          {/* Admin Link */}
+          <Link
+            href="/admin"
+            className="mb-12 px-4 py-2 text-sm text-gray-300 hover:text-white transition underline"
+          >
+            Manage Portfolio
+          </Link>
+
           {/* Portfolio Grid */}
           <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-            {portfolioItems.map((item, index) => (
-              <Card
-                key={index}
-                className="bg-white/95 backdrop-blur border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
-              >
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-lg md:text-xl font-semibold text-gray-900">
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-700 text-sm md:text-base leading-relaxed">
-                    {item.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+            {projects.map((project) => (
+              <div key={project.id} className="group cursor-pointer">
+                <Card className="bg-white/95 backdrop-blur border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 h-full">
+                  <CardHeader className="pb-3">
+                    <div className="flex justify-between items-start">
+                      <div className="flex-1">
+                        <CardTitle className="text-lg md:text-xl font-semibold text-gray-900">
+                          {project.title}
+                        </CardTitle>
+                        {project.date && (
+                          <CardDescription className="text-gray-500 text-sm mt-1">
+                            {project.date}
+                          </CardDescription>
+                        )}
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <CardDescription className="text-gray-700 text-sm md:text-base leading-relaxed">
+                      {project.description}
+                    </CardDescription>
+                    {project.technologies && project.technologies.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.slice(0, 3).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded-full"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                        {project.technologies.length > 3 && (
+                          <span className="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded-full">
+                            +{project.technologies.length - 3}
+                          </span>
+                        )}
+                      </div>
+                    )}
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block text-blue-600 hover:text-blue-700 font-medium text-sm transition group-hover:underline"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        View Project →
+                      </a>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
             ))}
           </div>
+
+          {projects.length === 0 && (
+            <div className="text-center text-white">
+              <p className="text-lg mb-4">No projects yet. Add some to get started!</p>
+              <Link
+                href="/admin"
+                className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition"
+              >
+                Go to Admin
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>
