@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "title": "Project One",
+    "description": "A modern web application built with Next.js and React.",
+    "link": "https://github.com",
+    "technologies": ["Next.js", "React", "TypeScript"],
+    "date": "2025"
+  },
+  {
+    "id": "2",
+    "title": "Project Two",
+    "description": "Full-stack application with TypeScript and Node.js backend.",
+    "link": "https://github.com",
+    "technologies": ["Node.js", "TypeScript", "PostgreSQL"],
+    "date": "2024"
+  },
+  {
+    "id": "3",
+    "title": "Project Three",
+    "description": "Mobile-responsive design using Tailwind CSS and Shadcn UI.",
+    "link": "https://github.com",
+    "technologies": ["Tailwind CSS", "Shadcn UI", "React"],
+    "date": "2024"
+  },
+  {
+    "id": "4",
+    "title": "Project Four",
+    "description": "Real-time data dashboard with performance optimization.",
+    "link": "https://github.com",
+    "technologies": ["React", "WebSocket", "D3.js"],
+    "date": "2023"
+  }
+]
