@@ -71,10 +71,11 @@ export default function AdminPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-slate-900 to-slate-800 p-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="flex justify-between items-center mb-8">
+    <div className="min-h-screen w-full bg-hero">
+      <div className="min-h-screen w-full bg-black/40 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto p-8">
+          {/* Header */}
+          <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-4xl font-bold text-white mb-2">Admin Panel</h1>
             <p className="text-gray-300">Manage your portfolio projects</p>
@@ -99,7 +100,7 @@ export default function AdminPage() {
 
         {/* Form */}
         {isFormOpen && (
-          <Card className="mb-8 bg-slate-800 border-slate-700">
+          <Card className="mb-8 bg-slate-800/90 backdrop-blur border-slate-700">
             <CardHeader>
               <CardTitle className="text-white">
                 {editingId ? "Edit Project" : "Add New Project"}
@@ -209,7 +210,7 @@ export default function AdminPage() {
             projects.map((project) => (
               <Card
                 key={project.id}
-                className="bg-slate-800 border-slate-700 hover:border-slate-600 transition"
+                className="bg-slate-800/90 backdrop-blur border-slate-700 hover:border-slate-600 transition"
               >
                 <CardHeader className="pb-3">
                   <div className="flex justify-between items-start">
@@ -267,6 +268,7 @@ export default function AdminPage() {
               </Card>
             ))
           )}
+        </div>
         </div>
       </div>
     </div>
