@@ -4,10 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { useProjects } from "@/context/ProjectContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Project } from "@/lib/projects";
 
 export default function AdminPage() {
-  const { projects, addProject, updateProject, deleteProject } = useProjects();
+  const { projects, addProject, updateProject, deleteProject, isLoading } = useProjects();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [formData, setFormData] = useState<Omit<Project, "id">>({
@@ -204,7 +205,38 @@ export default function AdminPage() {
           <h2 className="text-2xl font-bold text-white mb-4">
             Projects ({projects.length})
           </h2>
-          {projects.length === 0 ? (
+          {isLoading ? (
+            // Skeleton loaders
+            <div className="space-y-4">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <Card key={i} className="bg-slate-800/90 backdrop-blur border-slate-700">
+                  <CardHeader className="pb-3">
+                    <div className="flex justify-between items-start">
+                      <div className="flex-1 space-y-2">
+                        <Skeleton className="h-6 w-1/3 bg-slate-700" />
+                        <Skeleton className="h-4 w-1/4 bg-slate-700" />
+                      </div>
+                      <div className="flex gap-2">
+                        <Skeleton className="h-8 w-12 bg-slate-700 rounded" />
+                        <Skeleton className="h-8 w-16 bg-slate-700 rounded" />
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="space-y-2">
+                      <Skeleton className="h-4 w-full bg-slate-700" />
+                      <Skeleton className="h-4 w-5/6 bg-slate-700" />
+                    </div>
+                    <div className="flex gap-2 pt-2">
+                      <Skeleton className="h-6 w-20 rounded-full bg-slate-700" />
+                      <Skeleton className="h-6 w-24 rounded-full bg-slate-700" />
+                      <Skeleton className="h-6 w-16 rounded-full bg-slate-700" />
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : projects.length === 0 ? (
             <p className="text-gray-400">No projects yet. Add one to get started!</p>
           ) : (
             projects.map((project) => (
