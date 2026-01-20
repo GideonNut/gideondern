@@ -35,9 +35,19 @@ export default function Home() {
       <div className="min-h-screen w-full bg-black/30 backdrop-blur-sm">
         <div className="flex flex-col items-center justify-center px-4 py-16">
           {/* Name Header */}
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-16 tracking-tight">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
             Gideon Dern
           </h1>
+
+          {/* View CV Button */}
+          <a
+            href="https://docs.google.com/document/d/1DLCHgS-zeq_45dWMTs4sm3avwEtlYY66fJXdqgmXvx8/edit?usp=drivesdk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-16 px-6 py-2 border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-colors duration-300 rounded-lg"
+          >
+            View CV →
+          </a>
 
           {/* Portfolio Grid */}
           <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
