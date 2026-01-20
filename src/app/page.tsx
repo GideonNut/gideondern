@@ -3,30 +3,61 @@
 import Link from "next/link";
 import { useProjects } from "@/context/ProjectContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function Home() {
-  const { projects } = useProjects();
+  const { projects, isLoading } = useProjects();
+
+  const ProjectSkeleton = () => (
+    <Card className="bg-white/95 backdrop-blur border-0 shadow-lg h-full">
+      <CardHeader className="pb-3">
+        <div className="space-y-2">
+          <Skeleton className="h-6 w-3/4 bg-gray-300" />
+          <Skeleton className="h-4 w-1/4 bg-gray-300" />
+        </div>
+      </CardHeader>
+      <CardContent className="space-y-3">
+        <div className="space-y-2">
+          <Skeleton className="h-4 w-full bg-gray-300" />
+          <Skeleton className="h-4 w-5/6 bg-gray-300" />
+        </div>
+        <div className="flex gap-2 pt-2">
+          <Skeleton className="h-6 w-16 rounded-full bg-gray-300" />
+          <Skeleton className="h-6 w-20 rounded-full bg-gray-300" />
+          <Skeleton className="h-6 w-14 rounded-full bg-gray-300" />
+        </div>
+      </CardContent>
+    </Card>
+  );
 
   return (
     <div className="min-h-screen w-full bg-hero">
       <div className="min-h-screen w-full bg-black/30 backdrop-blur-sm">
         <div className="flex flex-col items-center justify-center px-4 py-16">
           {/* Name Header */}
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-16 tracking-tight">
             Gideon Dern
           </h1>
 
-          {/* Admin Link */}
-          <Link
-            href="/admin"
-            className="mb-12 px-4 py-2 text-sm text-gray-300 hover:text-white transition underline"
-          >
-            Manage Portfolio
-          </Link>
-
           {/* Portfolio Grid */}
           <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-            {projects.map((project) => (
+            {isLoading ? (
+              // Skeleton loaders
+              Array.from({ length: 4 }).map((_, i) => (
+                <ProjectSkeleton key={i} />
+              ))
+            ) : projects.length === 0 ? (
+              <div className="col-span-full text-center text-white">
+                <p className="text-lg mb-4">No projects yet. Add some to get started!</p>
+                <Link
+                  href="/admin"
+                  className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition"
+                >
+                  Go to Admin
+                </Link>
+              </div>
+            ) : (
+              projects.map((project) => (
               <div key={project.id} className="group cursor-pointer">
                 <Card className="bg-white/95 backdrop-blur border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 h-full">
                   <CardHeader className="pb-3">
@@ -78,20 +109,9 @@ export default function Home() {
                   </CardContent>
                 </Card>
               </div>
-            ))}
+              ))
+            )}
           </div>
-
-          {projects.length === 0 && (
-            <div className="text-center text-white">
-              <p className="text-lg mb-4">No projects yet. Add some to get started!</p>
-              <Link
-                href="/admin"
-                className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition"
-              >
-                Go to Admin
-              </Link>
-            </div>
-          )}
         </div>
       </div>
     </div>
