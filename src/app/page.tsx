@@ -44,7 +44,7 @@ export default function Home() {
             href="https://docs.google.com/document/d/1DLCHgS-zeq_45dWMTs4sm3avwEtlYY66fJXdqgmXvx8/edit?usp=drivesdk"
             target="_blank"
             rel="noopener noreferrer"
-            className="mb-16 px-6 py-2 border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-colors duration-300 rounded-lg"
+            className="mb-16 px-4 py-1 border border-white text-white text-sm font-medium hover:bg-white hover:text-black transition-colors duration-300 rounded"
           >
             View CV →
           </a>
