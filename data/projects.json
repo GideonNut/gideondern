@@ -1,34 +1,126 @@
 [
   {
-    "id": "1",
-    "title": "Project One",
-    "description": "A modern web application built with Next.js and React.",
-    "link": "https://github.com",
-    "technologies": ["Next.js", "React", "TypeScript"],
-    "date": "2025"
+    "id": "mpharma",
+    "title": "mPharma",
+    "description": "Managed inventory control across pharmaceutical SKUs, improving accuracy through reconciliation and system tracking.",
+    "technologies": ["SAP", "Microsoft Excel", "Inventory Control"],
+    "date": "2023 – 2025",
+    "highlights": [
+      "Managed inventory and stock control operations across pharmaceutical SKUs",
+      "Reduced stock discrepancies through reconciliation and system tracking",
+      "Maintained accurate inventory records using SAP and Microsoft Excel",
+      "Ensured compliance with operational procedures"
+    ]
   },
   {
-    "id": "2",
-    "title": "Project Two",
-    "description": "Full-stack application with TypeScript and Node.js backend.",
-    "link": "https://github.com",
-    "technologies": ["Node.js", "TypeScript", "PostgreSQL"],
-    "date": "2024"
+    "id": "betechconnected",
+    "title": "BeTechConnected",
+    "description": "Led end-to-end research activities across initiatives, delivering structured insights and reports to support decision-making.",
+    "technologies": ["Research", "Data Analysis", "Reporting"],
+    "date": "2025",
+    "highlights": [
+      "Led research activities across organizational initiatives",
+      "Conducted data gathering, analysis, and documentation",
+      "Wrote structured reports and research-based materials",
+      "Supported decision-making through evidence-based insights",
+      "Led research and groundwork for The Employable Project (surveys, data collection, analysis, reporting)"
+    ]
   },
   {
-    "id": "3",
-    "title": "Project Three",
-    "description": "Mobile-responsive design using Tailwind CSS and Shadcn UI.",
-    "link": "https://github.com",
-    "technologies": ["Tailwind CSS", "Shadcn UI", "React"],
-    "date": "2024"
+    "id": "future-of-work-program",
+    "title": "Future of Work Program",
+    "description": "Managed grants and partnerships at scale, coordinating multi-partner delivery with strong documentation and budget oversight.",
+    "technologies": ["Grants", "Partnerships", "Budget Tracking"],
+    "date": "2023 – 2025",
+    "highlights": [
+      "Applied for and managed grants supporting program execution",
+      "Coordinated activities across 40+ partners",
+      "Managed documentation and tracking of expenditures",
+      "Oversaw budgets exceeding $20,000",
+      "Ensured alignment between funding objectives and delivery outcomes"
+    ]
   },
   {
-    "id": "4",
-    "title": "Project Four",
-    "description": "Real-time data dashboard with performance optimization.",
-    "link": "https://github.com",
-    "technologies": ["React", "WebSocket", "D3.js"],
-    "date": "2023"
+    "id": "yewglobal",
+    "title": "YewGlobal",
+    "description": "Improved content quality and website presentation through editing and web design support for a clean, structured publishing workflow.",
+    "technologies": ["Editing", "Web Design", "Content Operations"],
+    "date": "2022 – Present",
+    "highlights": [
+      "Edited and refined blog content before publication",
+      "Ensured clarity, consistency, and quality of written materials",
+      "Contributed to the design and maintenance of a clean, structured website",
+      "Supported digital content organization and presentation"
+    ]
+  },
+  {
+    "id": "adsparo",
+    "title": "Adsparo",
+    "description": "Supported brand campaigns through content ideation and design, producing marketing materials for notable clients.",
+    "technologies": ["Photoshop", "Canva", "Marketing Content"],
+    "date": "2024",
+    "highlights": [
+      "Crafted and brainstormed marketing content for brand campaigns",
+      "Supported content development for brands including MEST and Vodafone",
+      "Designed visually appealing marketing materials using Photoshop and Canva"
+    ]
+  },
+  {
+    "id": "celo",
+    "title": "Celo.org",
+    "description": "Produced developer-friendly technical writing that simplified blockchain concepts and improved documentation accessibility.",
+    "technologies": ["Technical Writing", "Blockchain Research"],
+    "date": "2022",
+    "highlights": [
+      "Researched blockchain tools and developer resources",
+      "Wrote simplified, structured blogs for developers",
+      "Translated complex technical concepts into accessible content"
+    ]
+  },
+  {
+    "id": "thebigtrendin",
+    "title": "TheBigTrendin Multimedia House",
+    "description": "Created consistent content and community growth through blogging and hands-on social media management.",
+    "technologies": ["Blogging", "Social Media"],
+    "date": "2019",
+    "highlights": [
+      "Wrote news, lifestyle, and trends-related blog content",
+      "Managed social media pages",
+      "Grew social media presence organically to over 1,000 subscribers",
+      "Supported audience engagement through consistent updates"
+    ]
+  },
+  {
+    "id": "ethaccra-borla2earn",
+    "title": "EthAccra — Borla2Earn",
+    "description": "Led research for a waste management hackathon project, validating problem scope and solution direction.",
+    "technologies": ["User Research", "Problem Validation"],
+    "date": "2022",
+    "highlights": [
+      "Led research for a waste management hackathon project",
+      "Conducted problem analysis and solution validation"
+    ]
+  },
+  {
+    "id": "ethaccra-ham-platform",
+    "title": "EthAccra — HAM Platform",
+    "description": "Conducted ecosystem and user-needs research for a charity-focused platform concept.",
+    "technologies": ["Research", "User Needs Analysis"],
+    "date": "2024",
+    "highlights": [
+      "Led research for a charity-focused platform",
+      "Analyzed user needs and ecosystem challenges"
+    ]
+  },
+  {
+    "id": "knust-updates-channel",
+    "title": "KNUST Updates Channel",
+    "description": "Built and ran a campus updates community with reliable, timely content distribution.",
+    "technologies": ["Community Building", "Content Operations"],
+    "date": "—",
+    "highlights": [
+      "Built a digital updates community with 2,000+ members",
+      "Delivered timely information on campus developments"
+    ]
   }
 ]

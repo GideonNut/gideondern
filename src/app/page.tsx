@@ -105,17 +105,13 @@ export default function Home() {
                         )}
                       </div>
                     )}
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-block text-blue-600 hover:text-blue-700 font-medium text-sm transition group-hover:underline"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        View Project →
-                      </a>
-                    )}
+                    <Link
+                      href={`/projects/${project.id}`}
+                      className="inline-block text-blue-600 hover:text-blue-700 font-medium text-sm transition group-hover:underline"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      View Project →
+                    </Link>
                   </CardContent>
                 </Card>
               </div>
