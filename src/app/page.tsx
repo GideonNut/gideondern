@@ -9,22 +9,22 @@ export default function Home() {
   const { projects, isLoading } = useProjects();
 
   const ProjectSkeleton = () => (
-    <Card className="bg-white/95 backdrop-blur border-0 shadow-lg h-full">
+    <Card className="h-full border-white/20 bg-white/12 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.35)]">
       <CardHeader className="pb-3">
         <div className="space-y-2">
-          <Skeleton className="h-6 w-3/4 bg-gray-300" />
-          <Skeleton className="h-4 w-1/4 bg-gray-300" />
+          <Skeleton className="h-6 w-3/4 bg-white/30" />
+          <Skeleton className="h-4 w-1/4 bg-white/20" />
         </div>
       </CardHeader>
       <CardContent className="space-y-3">
         <div className="space-y-2">
-          <Skeleton className="h-4 w-full bg-gray-300" />
-          <Skeleton className="h-4 w-5/6 bg-gray-300" />
+          <Skeleton className="h-4 w-full bg-white/20" />
+          <Skeleton className="h-4 w-5/6 bg-white/20" />
         </div>
         <div className="flex gap-2 pt-2">
-          <Skeleton className="h-6 w-16 rounded-full bg-gray-300" />
-          <Skeleton className="h-6 w-20 rounded-full bg-gray-300" />
-          <Skeleton className="h-6 w-14 rounded-full bg-gray-300" />
+          <Skeleton className="h-6 w-16 rounded-full bg-white/20" />
+          <Skeleton className="h-6 w-20 rounded-full bg-white/20" />
+          <Skeleton className="h-6 w-14 rounded-full bg-white/20" />
         </div>
       </CardContent>
     </Card>
@@ -69,15 +69,16 @@ export default function Home() {
             ) : (
               projects.map((project) => (
               <div key={project.id} className="group cursor-pointer">
-                <Card className="bg-white/95 backdrop-blur border-0 shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 h-full">
+                <Card className="relative h-full overflow-hidden border-white/20 bg-gradient-to-br from-white/20 via-white/10 to-white/5 backdrop-blur-xl shadow-[0_15px_45px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-white/35 hover:shadow-[0_20px_55px_rgba(0,0,0,0.5)]">
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-400/90 via-cyan-300/90 to-indigo-400/90" />
                   <CardHeader className="pb-3">
                     <div className="flex justify-between items-start">
                       <div className="flex-1">
-                        <CardTitle className="text-lg md:text-xl font-semibold text-gray-900">
+                        <CardTitle className="text-lg md:text-xl font-semibold text-white drop-shadow-sm">
                           {project.title}
                         </CardTitle>
                         {project.date && (
-                          <CardDescription className="text-gray-500 text-sm mt-1">
+                          <CardDescription className="text-white/70 text-sm mt-1">
                             {project.date}
                           </CardDescription>
                         )}
@@ -85,7 +86,7 @@ export default function Home() {
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    <CardDescription className="text-gray-700 text-sm md:text-base leading-relaxed">
+                    <CardDescription className="text-white/85 text-sm md:text-base leading-relaxed">
                       {project.description}
                     </CardDescription>
                     {project.technologies && project.technologies.length > 0 && (
@@ -93,13 +94,13 @@ export default function Home() {
                         {project.technologies.slice(0, 3).map((tech) => (
                           <span
                             key={tech}
-                            className="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded-full"
+                            className="rounded-full border border-white/30 bg-white/15 px-2 py-1 text-xs text-white"
                           >
                             {tech}
                           </span>
                         ))}
                         {project.technologies.length > 3 && (
-                          <span className="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded-full">
+                          <span className="rounded-full border border-white/25 bg-white/10 px-2 py-1 text-xs text-white/90">
                             +{project.technologies.length - 3}
                           </span>
                         )}
@@ -107,7 +108,7 @@ export default function Home() {
                     )}
                     <Link
                       href={`/projects/${project.id}`}
-                      className="inline-block text-blue-600 hover:text-blue-700 font-medium text-sm transition group-hover:underline"
+                      className="inline-flex items-center rounded-md border border-white/30 bg-white/15 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-white/25"
                       onClick={(e) => e.stopPropagation()}
                     >
                       View Project →

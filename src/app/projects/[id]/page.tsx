@@ -26,39 +26,40 @@ export default function ProjectDetailsPage() {
           </div>
 
           {isLoading ? (
-            <Card className="bg-white/95 backdrop-blur border-0 shadow-lg">
+            <Card className="border-white/20 bg-gradient-to-br from-white/20 via-white/10 to-white/5 backdrop-blur-xl shadow-[0_15px_45px_rgba(0,0,0,0.35)]">
               <CardHeader>
-                <CardTitle className="text-gray-900">Loading…</CardTitle>
+                <CardTitle className="text-white">Loading…</CardTitle>
               </CardHeader>
-              <CardContent className="text-gray-700">Fetching project details.</CardContent>
+              <CardContent className="text-white/80">Fetching project details.</CardContent>
             </Card>
           ) : !project ? (
-            <Card className="bg-white/95 backdrop-blur border-0 shadow-lg">
+            <Card className="border-white/20 bg-gradient-to-br from-white/20 via-white/10 to-white/5 backdrop-blur-xl shadow-[0_15px_45px_rgba(0,0,0,0.35)]">
               <CardHeader>
-                <CardTitle className="text-gray-900">Not found</CardTitle>
+                <CardTitle className="text-white">Not found</CardTitle>
               </CardHeader>
-              <CardContent className="text-gray-700">
+              <CardContent className="text-white/80">
                 We couldn’t find that project.
               </CardContent>
             </Card>
           ) : (
-            <Card className="bg-white/95 backdrop-blur border-0 shadow-lg">
+            <Card className="relative overflow-hidden border-white/20 bg-gradient-to-br from-white/20 via-white/10 to-white/5 backdrop-blur-xl shadow-[0_18px_50px_rgba(0,0,0,0.42)]">
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-400/90 via-cyan-300/90 to-indigo-400/90" />
               <CardHeader className="space-y-2">
-                <CardTitle className="text-2xl md:text-3xl text-gray-900">
+                <CardTitle className="text-2xl md:text-3xl text-white drop-shadow-sm">
                   {project.title}
                 </CardTitle>
-                {project.date && <p className="text-gray-600">{project.date}</p>}
+                {project.date && <p className="text-white/75">{project.date}</p>}
               </CardHeader>
 
               <CardContent className="space-y-6">
-                <p className="text-gray-800 leading-relaxed">{project.description}</p>
+                <p className="leading-relaxed text-white/90">{project.description}</p>
 
                 {project.technologies && project.technologies.length > 0 && (
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 bg-gray-200 text-gray-800 text-xs rounded-full"
+                        className="rounded-full border border-white/30 bg-white/15 px-2 py-1 text-xs text-white"
                       >
                         {tech}
                       </span>
@@ -68,10 +69,10 @@ export default function ProjectDetailsPage() {
 
                 {project.highlights && project.highlights.length > 0 && (
                   <div className="space-y-2">
-                    <h2 className="text-lg font-semibold text-gray-900">
+                    <h2 className="text-lg font-semibold text-white">
                       Key contributions
                     </h2>
-                    <ul className="list-disc pl-5 space-y-1 text-gray-800">
+                    <ul className="list-disc space-y-1 pl-5 text-white/90">
                       {project.highlights.map((item) => (
                         <li key={item}>{item}</li>
                       ))}
@@ -85,7 +86,7 @@ export default function ProjectDetailsPage() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-700 hover:text-blue-800 font-medium underline underline-offset-4"
+                      className="font-medium text-cyan-200 underline underline-offset-4 transition hover:text-cyan-100"
                     >
                       External link →
                     </a>
