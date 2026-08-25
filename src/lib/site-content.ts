@@ -52,8 +52,11 @@ export const siteMeta = {
   github: "https://github.com/gideonnut",
   cvUrl:
     "https://docs.google.com/document/d/1DLCHgS-zeq_45dWMTs4sm3avwEtlYY66fJXdqgmXvx8/edit?usp=drivesdk",
-  email: "gideon.dern@gmail.com",
-  whatsapp: "https://wa.me/233000000000",
+  email: "ngideon538@yahoo.com",
+  whatsapp: "https://wa.me/233545171553",
+  whatsappLabel: "WhatsApp @gideondern",
+  telegram: "https://t.me/gideondern",
+  telegramLabel: "Telegram @gideondern",
   updated: "August 2026",
 };
 

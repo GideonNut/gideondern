@@ -4,7 +4,6 @@ import Link from "next/link";
 import { siteMeta } from "@/lib/site-content";
 
 const navLinks = [
-  { label: "Work", href: "#work" },
   { label: "Experience", href: "#experience" },
   { label: "GitHub", href: siteMeta.github, external: true },
   { label: "Contact", href: "#contact" },
