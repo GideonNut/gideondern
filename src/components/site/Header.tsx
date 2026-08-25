@@ -5,6 +5,7 @@ import { siteMeta } from "@/lib/site-content";
 
 const navLinks = [
   { label: "Experience", href: "#experience" },
+  { label: "Gallery", href: "/gallery" },
   { label: "GitHub", href: siteMeta.github, external: true },
   { label: "Contact", href: "#contact" },
 ];

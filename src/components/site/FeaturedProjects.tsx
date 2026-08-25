@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { featuredProjects } from "@/lib/site-content";
-import { ImagePlaceholder } from "./PhotoFrame";
+import { PhotoFrame } from "./PhotoFrame";
 
 export function FeaturedProjects() {
   const [index, setIndex] = useState(0);
@@ -90,7 +90,11 @@ export function FeaturedProjects() {
             </div>
 
             <div>
-              <ImagePlaceholder label={current.imageLabel} />
+              <PhotoFrame
+                src={current.image}
+                alt={current.title}
+                label={current.imageLabel}
+              />
             </div>
           </div>
 

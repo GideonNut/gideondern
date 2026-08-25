@@ -1,5 +1,5 @@
-import { socialLinks } from "@/lib/site-content";
-import { ImagePlaceholder } from "./PhotoFrame";
+import { galleryImages, socialLinks } from "@/lib/site-content";
+import { PhotoFrame } from "./PhotoFrame";
 
 export function SocialSection() {
   return (
@@ -13,8 +13,8 @@ export function SocialSection() {
         </p>
 
         <div className="mb-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {Array.from({ length: 4 }).map((_, i) => (
-            <ImagePlaceholder key={i} label={`Photo ${i + 1}`} />
+          {galleryImages.slice(0, 4).map((image) => (
+            <PhotoFrame key={image.src} src={image.src} alt={image.alt} />
           ))}
         </div>
 
