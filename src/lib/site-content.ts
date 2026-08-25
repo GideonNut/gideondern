@@ -6,6 +6,7 @@ export interface FeaturedProject {
   tags: string[];
   stats: { value: string; label: string }[];
   imageLabel: string;
+  image?: string;
   href: string;
   linkLabel?: string;
 }
@@ -58,7 +59,16 @@ export const siteMeta = {
   telegram: "https://t.me/gideondern",
   telegramLabel: "Telegram @gideondern",
   updated: "August 2026",
+  heroImage: "/GALL/IMG_6970.JPEG",
+  ogImage: "/GALL/IMG_6970.JPEG",
 };
+
+export const galleryImages = [
+  { src: "/GALL/IMG_6965.JPEG", alt: "Gideon Dern" },
+  { src: "/GALL/IMG_8250.JPEG", alt: "Gideon Dern" },
+  { src: "/GALL/IMG_2160.JPEG", alt: "Gideon Dern" },
+  { src: "/GALL/IMG_8666.JPEG", alt: "Gideon Dern" },
+];
 
 export const nowSection = {
   building:
@@ -82,6 +92,7 @@ export const featuredProjects: FeaturedProject[] = [
       { value: "AI-ready", label: "Agent integration" },
     ],
     imageLabel: "Myth Celo MCP — tooling",
+    image: "/GALL/IMG_8666.JPEG",
     href: "https://github.com/gideonnut/myth-celo-mcp",
     linkLabel: "View on GitHub →",
   },
@@ -97,6 +108,7 @@ export const featuredProjects: FeaturedProject[] = [
       { value: "Creator", label: "First design" },
     ],
     imageLabel: "StoryFund — platform",
+    image: "/GALL/IMG_6965.JPEG",
     href: "https://github.com/gideonnut/StoryFund",
     linkLabel: "View on GitHub →",
   },
