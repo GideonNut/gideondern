@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { featuredProjects } from "@/lib/site-content";
-import { ImagePlaceholder } from "./Hero";
+import { ImagePlaceholder } from "./PhotoFrame";
 
 export function FeaturedProjects() {
   const [index, setIndex] = useState(0);

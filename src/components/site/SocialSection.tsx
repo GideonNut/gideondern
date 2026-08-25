@@ -1,5 +1,5 @@
 import { socialLinks } from "@/lib/site-content";
-import { ImagePlaceholder } from "./Hero";
+import { ImagePlaceholder } from "./PhotoFrame";
 
 export function SocialSection() {
   return (
