@@ -1,15 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/site/Header";
-
-const galleryImages = [
-  { src: "/GALL/IMG_2160.JPEG", alt: "Gideon Dern portrait 1" },
-  { src: "/GALL/IMG_2161.JPEG", alt: "Gideon Dern portrait 2" },
-  { src: "/GALL/IMG_6965.JPEG", alt: "Gideon Dern portrait 3" },
-  { src: "/GALL/IMG_6970.JPEG", alt: "Gideon Dern portrait 4" },
-  { src: "/GALL/IMG_8250.JPEG", alt: "Gideon Dern portrait 5" },
-  { src: "/GALL/IMG_8666.JPEG", alt: "Gideon Dern portrait 6" },
-];
+import { galleryImages } from "@/lib/site-content";
 
 export default function GalleryPage() {
   return (

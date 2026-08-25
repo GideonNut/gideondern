@@ -66,9 +66,11 @@ export const siteMeta = {
 };
 
 export const galleryImages = [
+  { src: "/GALL/IMG_6970.JPEG", alt: "Gideon Dern portrait" },
   { src: "/GALL/IMG_6965.JPEG", alt: "Gideon Dern" },
-  { src: "/GALL/IMG_8250.JPEG", alt: "Gideon Dern" },
   { src: "/GALL/IMG_2160.JPEG", alt: "Gideon Dern" },
+  { src: "/GALL/IMG_2161.JPEG", alt: "Gideon Dern" },
+  { src: "/GALL/IMG_8250.JPEG", alt: "Gideon Dern" },
   { src: "/GALL/IMG_8666.JPEG", alt: "Gideon Dern" },
 ];
 
