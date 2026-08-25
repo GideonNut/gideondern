@@ -62,7 +62,7 @@ export const siteMeta = {
   xHandle: "@gideondern_",
   updated: "August 2026",
   heroImage: "/GALL/IMG_6970.JPEG",
-  ogImage: "/GALL/IMG_6970.JPEG",
+  ogImage: "/og-image.png",
 };
 
 export const galleryImages = [

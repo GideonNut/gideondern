@@ -3,6 +3,7 @@ import { ProjectProvider } from "@/context/ProjectContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gideondern.xyz"),
   title: "Gideon Dern — Software Engineer & Builder, Ghana",
   description:
     "Personal portfolio of Gideon Dern — software engineer and builder shipping web apps, Web3 products, and full-stack systems.",
@@ -10,12 +11,15 @@ export const metadata: Metadata = {
     title: "Gideon Dern — Software Engineer & Builder, Ghana",
     description:
       "Personal portfolio of Gideon Dern — software engineer and builder shipping web apps, Web3 products, and full-stack systems.",
+    url: "https://gideondern.xyz",
+    siteName: "Gideon Dern",
+    type: "website",
     images: [
       {
-        url: "/GALL/IMG_6970.JPEG",
+        url: "/og-image.png",
         width: 1200,
-        height: 800,
-        alt: "Gideon Dern portrait",
+        height: 630,
+        alt: "Gideon Dern social preview",
       },
     ],
   },
@@ -26,7 +30,7 @@ export const metadata: Metadata = {
       "Personal portfolio of Gideon Dern — software engineer and builder shipping web apps, Web3 products, and full-stack systems.",
     creator: "@gideondern_",
     site: "@gideondern_",
-    images: ["/GALL/IMG_6970.JPEG"],
+    images: ["/og-image.png"],
   },
 };
 
