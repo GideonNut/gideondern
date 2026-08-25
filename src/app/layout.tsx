@@ -3,8 +3,9 @@ import { ProjectProvider } from "@/context/ProjectContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Gideon Dern",
-  description: "Personal portfolio of Gideon Dern",
+  title: "Gideon Dern — Software Engineer & Builder, Ghana",
+  description:
+    "Personal portfolio of Gideon Dern — software engineer and builder shipping web apps, Web3 products, and full-stack systems.",
 };
 
 export default function RootLayout({
