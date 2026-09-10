@@ -1,9 +1,46 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { galleryImages, socialLinks } from "@/lib/site-content";
 import { PhotoFrame } from "./PhotoFrame";
 
+const socialImages = galleryImages.slice(0, 4);
+
 export function SocialSection() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section) return;
+
+    const updateIndex = () => {
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const rawProgress = Math.min(Math.max((viewportHeight - rect.top) / (rect.height + viewportHeight), 0), 1);
+      const nextIndex = Math.min(
+        socialImages.length - 1,
+        Math.max(0, Math.round(rawProgress * (socialImages.length - 1)))
+      );
+
+      setActiveIndex(nextIndex);
+    };
+
+    updateIndex();
+    window.addEventListener("scroll", updateIndex, { passive: true });
+    window.addEventListener("resize", updateIndex);
+
+    return () => {
+      window.removeEventListener("scroll", updateIndex);
+      window.removeEventListener("resize", updateIndex);
+    };
+  }, []);
+
+  const trackOffset = activeIndex * 25;
+
   return (
-    <section className="border-b border-white/10">
+    <section ref={sectionRef} className="border-b border-white/10">
       <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
         <h2 className="mb-2 text-3xl font-bold text-white md:text-4xl">
           Find me elsewhere
@@ -12,10 +49,21 @@ export function SocialSection() {
           // not just code — here&apos;s the rest of it
         </p>
 
-        <div className="mb-10 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {galleryImages.slice(0, 4).map((image) => (
-            <PhotoFrame key={image.src} src={image.src} alt={image.alt} />
-          ))}
+        <div className="mb-10 overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-2">
+          <div
+            className="flex transition-transform duration-700 ease-out"
+            style={{ transform: `translateX(-${trackOffset}%)` }}
+          >
+            {socialImages.map((image) => (
+              <div
+                key={image.src}
+                className="w-[25%] shrink-0 px-2"
+                aria-label={image.alt}
+              >
+                <PhotoFrame src={image.src} alt={image.alt} />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-4">

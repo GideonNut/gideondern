@@ -85,6 +85,22 @@ export const nowSection = {
 
 export const featuredProjects: FeaturedProject[] = [
   {
+    id: "zyra",
+    title: "Invoicing software that small businesses can actually run",
+    subtitle: "Zyra",
+    description:
+      "Zyra helps you create invoices for your customers — a focused product build for businesses that need billing without the bloat of enterprise tooling.",
+    tags: ["TypeScript", "SaaS", "Product"],
+    stats: [
+      { value: "Simple", label: "Invoice creation" },
+      { value: "Shipped", label: "End-to-end product" },
+    ],
+    imageLabel: "Zyra — invoicing",
+    image: "/GALL/IMG_2160.JPEG",
+    href: "https://github.com/gideonnut/Zyra",
+    linkLabel: "View on GitHub →",
+  },
+  {
     id: "myth-celo-mcp",
     title: "MCP servers for smart contracts, generated on demand",
     subtitle: "myth-celo-mcp",
@@ -130,22 +146,6 @@ export const featuredProjects: FeaturedProject[] = [
     imageLabel: "MovieMeter — mini-app",
     image: "/GALL/IMG_8250.JPEG",
     href: "https://github.com/gideonnut/Moviemeterminiapp",
-    linkLabel: "View on GitHub →",
-  },
-  {
-    id: "zyra",
-    title: "Invoicing software that small businesses can actually run",
-    subtitle: "Zyra",
-    description:
-      "Zyra helps you create invoices for your customers — a focused product build for businesses that need billing without the bloat of enterprise tooling.",
-    tags: ["TypeScript", "SaaS", "Product"],
-    stats: [
-      { value: "Simple", label: "Invoice creation" },
-      { value: "Shipped", label: "End-to-end product" },
-    ],
-    imageLabel: "Zyra — invoicing",
-    image: "/GALL/IMG_2160.JPEG",
-    href: "https://github.com/gideonnut/Zyra",
     linkLabel: "View on GitHub →",
   },
   {
