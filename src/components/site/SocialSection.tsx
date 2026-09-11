@@ -37,7 +37,7 @@ export function SocialSection() {
     };
   }, []);
 
-  const trackOffset = activeIndex * 25;
+  const trackOffset = activeIndex * 33.333;
 
   return (
     <section ref={sectionRef} className="border-b border-white/10">
@@ -57,7 +57,7 @@ export function SocialSection() {
             {socialImages.map((image) => (
               <div
                 key={image.src}
-                className="w-[25%] shrink-0 px-2"
+                className="w-[85%] shrink-0 px-2 sm:w-[50%] md:w-[33.333%]"
                 aria-label={image.alt}
               >
                 <PhotoFrame src={image.src} alt={image.alt} />
