@@ -6,6 +6,7 @@ import { ExperienceSection } from "@/components/site/ExperienceSection";
 import { SkillsSection } from "@/components/site/SkillsSection";
 import { BeyondSection } from "@/components/site/BeyondSection";
 import { SocialSection } from "@/components/site/SocialSection";
+import { BlogSection } from "@/components/site/BlogSection";
 import { ContactSection } from "@/components/site/ContactSection";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
           <SkillsSection />
           <BeyondSection />
           <SocialSection />
+          <BlogSection />
           <ContactSection />
         </main>
       </div>

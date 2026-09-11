@@ -366,6 +366,49 @@ export const beyondItems: BeyondItem[] = [
   },
 ];
 
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  readTime: string;
+  date: string;
+  href: string;
+}
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "shipping-meanwhile-learning",
+    title: "Shipping while learning: the builder’s edge",
+    excerpt:
+      "What I’ve learned from building products in public is that momentum matters more than perfection — and the real growth comes from shipping the messy version first.",
+    category: "Product",
+    readTime: "4 min read",
+    date: "Sep 2026",
+    href: "#",
+  },
+  {
+    slug: "web3-product-design",
+    title: "Web3 product design without the noise",
+    excerpt:
+      "Good product work in Web3 needs clarity, user trust, and fewer abstractions. The best experiences still feel simple even when the architecture is complex.",
+    category: "Web3",
+    readTime: "5 min read",
+    date: "Aug 2026",
+    href: "#",
+  },
+  {
+    slug: "build-system-blindspots",
+    title: "The build system blind spots I keep catching",
+    excerpt:
+      "Most product friction is not in the big ideas — it is in the small assumptions, edge cases, and missing polish that only show up after people start using it.",
+    category: "Engineering",
+    readTime: "3 min read",
+    date: "Jul 2026",
+    href: "#",
+  },
+];
+
 export const socialLinks: SocialLink[] = [
   { label: "GitHub", href: siteMeta.github },
   { label: "LinkedIn", href: "#" },
